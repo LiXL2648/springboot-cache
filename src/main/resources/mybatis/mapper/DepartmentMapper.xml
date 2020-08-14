@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.li.springboot.dao.DepartmentDao">
+
+    <select id="getDep" resultType="department">
+        SELECT * from departments WHERE id = #{depId}
+    </select>
+
+    <select id="getDeps" resultType="department">
+        SELECT * from departments
+    </select>
+
+    <insert id="addDep">
+        INSERT INTO departments (dep_name, city) VALUES (#{depName}, #{city})
+    </insert>
+
+    <update id="updateDep">
+        UPDATE departments SET dep_name = #{depName}, city = #{city} WHERE id = #{depId}
+    </update>
+
+    <delete id="deleteDep">
+        DELETE FROM departments WHERE id = #{depId}
+    </delete>
+</mapper>

@@ -1,0 +1,25 @@
+server:
+  port: 8088
+  context-path: /springbootCache
+
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.1.229:3306/test
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    host: 192.168.1.229
+
+
+mybatis:
+  type-aliases-package: com.li.springboot.bean
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+logging:
+  level:
+    com:
+      li:
+        springboot:
+          dao: debug
